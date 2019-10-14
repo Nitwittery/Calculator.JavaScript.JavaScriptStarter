@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<style>
+		.numberButton
+		{
+			background-color: black;
+			color: white;
+			width: 10;
+			border-style: solid;
+			border-width: 3px;
+			border-color: white;
+		}
+
+		.display
+		{
+			background-color: black;
+			color: white;
+			padding: 10;
+			font-size: 48px;
+			font-weight: bold;
+			font-family: Courier;
+			text-align: right;
+			width: 300px;
+			border-style: solid;
+			border-width: 3px;
+			border-color: green;
+		}
+		</style>
+		<script type="application/javascript">
+
+			alert("Begin Load");
+
+			var value = 0;
+			var mode = null;
+
+			function alertMessage(o)
+			{
+				alert(o);
+			}
+
+			function sendConsoleNumber(o)
+			{
+				if(displayConsole.innerHTML == '0')
+				{
+					displayConsole.innerHTML = o.innerHTML;
+				}
+				else
+				{
+					displayConsole.innerHTML += o.innerHTML;
+				}
+			}
+
+			function sendConsoleOperator(o)
+			{
+				var currentValue = parseFloat(displayConsole.innerText);
+				
+				switch(o.innerText)
+				{
+					case '+':
+						mode = "Plus";
+						value += currentValue;
+						displayConsole.innerHTML = value.toString();
+						break;
+					default:
+						alert("Default");
+						break;
+				}
+			}
+
+			alert("Load Complete");
+		</script>		
+	</head>
+	<body>
+		<div id="calculator">
+			<div id="displayConsole" class="display">0</div>
+			<div id="zero" class="numberButton">0</div>
+			<div id="one" class="numberButton">1</div>
+			<div id="two" class="numberButton">2</div>
+			<div id="three" class="numberButton">3</div>
+			<div id="four" class="numberButton">4</div>
+			<div id="five" class="numberButton">5</div>
+			<div id="six" class="numberButton">6</div>
+			<div id="seven" class="numberButton">7</div>
+			<div id="eight" class="numberButton">8</div>
+			<div id="nine" class="numberButton">9</div>
+			<div id="decimal">.</div>
+			<div id="percent">%</div>
+			<div id="sign">+/-</div>
+			<div id="plus">+</div>
+			<div id="minus">-</div>
+			<div id="times">*</div>
+			<div id="divide">/</div>
+			<div id="equals">=</div>
+			<div id="clear">C</div>
+			<div id="clearEntry">CE</div>
+		</div>
+	</body>
+</html>
